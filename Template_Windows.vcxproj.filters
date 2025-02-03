@@ -27,7 +27,7 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Code</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="main_windows.cpp">
       <Filter>Code</Filter>
     </ClCompile>
   </ItemGroup>

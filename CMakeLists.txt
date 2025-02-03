@@ -1,36 +1,30 @@
 cmake_minimum_required(VERSION 3.8)
-project(Template_Windows)
+project(WickedShooter)
 
-file(GLOB SOURCE_FILES CONFIGURE_DEPENDS "*.cpp" "*.h")
+# if the engine is installed system-wise,
+# you can set INSTALLED_ENGINE to ON
+# moving your project folder wherever you want
+set(INSTALLED_ENGINE OFF)
+# you may also want to remove the copy mechanism of the startup.lua file
 
-set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}")
-set(LIB_DXCOMPILER "dxcompiler.dll")
+if (${INSTALLED_ENGINE})
+    find_package(WickedEngine REQUIRED)
+endif()
 
-list(APPEND SOURCE_FILES
-${CMAKE_CURRENT_SOURCE_DIR}/TemplateWindows.rc
+set(SOURCE_FILES
+    main_linux.cpp
+    stdafx.h
 )
 
-add_executable(${PROJECT_NAME} ${SOURCE_FILES})
+set(LIB_DXCOMPILER "libdxcompiler.so")
 
-target_link_libraries(${PROJECT_NAME} PUBLIC
-    WickedEngine_Windows
+add_executable(WickedShooter ${SOURCE_FILES})
+
+target_link_libraries(WickedShooter PUBLIC
+    # These are cmake generator expressions. They seem more daunting than they are
+    # Basically if the variable is ON it will give WickedEngine,
+    # if it's off, it will give WickedEngine::WickedEngine
+    $<$<NOT:$<BOOL:${INSTALLED_ENGINE}>>:WickedEngine>
+    $<$<BOOL:${INSTALLED_ENGINE}>:WickedEngine::WickedEngine>
 )
 
-set_target_properties(${PROJECT_NAME} PROPERTIES
-WIN32_EXECUTABLE YES
-)
-
-set(PLATFORM "Windows")
-add_compile_definitions(WIN32 _WINDOWS)
-
-set(LIBDXCOMPILER_PATH "${WICKED_ROOT_DIR}/WickedEngine/${LIB_DXCOMPILER}")
-set(STARTUP_LUA "${WICKED_ROOT_DIR}/Editor/startup.lua")
-message("libdxcompiler found at ${LIBDXCOMPILER_PATH}")
-message("startup lua found at ${STARTUP_LUA}")
-
-# this may not work on windows
-add_custom_command(
-    TARGET ${PROJECT_NAME} POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different ${LIBDXCOMPILER_PATH} ${CMAKE_CURRENT_BINARY_DIR}
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different ${STARTUP_LUA} ${CMAKE_CURRENT_BINARY_DIR}/startup.lua
-)
