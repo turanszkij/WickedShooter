@@ -1,0 +1,3 @@
+[submodule "WickedEngine"]
+	path = WickedEngine
+	url = https://github.com/turanszkij/WickedEngine.git

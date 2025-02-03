@@ -128,12 +128,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WickedEngine\WickedEngine\WickedEngine_Windows.vcxproj">
-      <Project>{06163dcb-b183-4ed9-9c62-13ef1658e049}</Project>
-    </ProjectReference>
+    <Image Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="icon.ico" />
+    <ProjectReference Include="WickedEngine\WickedEngine\WickedEngine_Windows.vcxproj">
+      <Project>{06163dcb-b183-4ed9-9c62-13ef1658e049}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
