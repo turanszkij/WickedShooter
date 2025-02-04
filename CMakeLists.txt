@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.8)
 project(WickedShooter)
 
+target_include_directories(WickedShooter PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/WickedEngine/WickedEngine)
+
 # if the engine is installed system-wise,
 # you can set INSTALLED_ENGINE to ON
 # moving your project folder wherever you want
