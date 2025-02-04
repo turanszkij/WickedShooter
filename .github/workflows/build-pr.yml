@@ -76,9 +76,16 @@ jobs:
         cd WickedEngine/build
         CCACHE_NODIRECT=1 make -B -j $(nproc)
 
+    - name: Compile WickedShooter
+      run: |
+        mkdir build
+        cd build
+        cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+        CCACHE_NODIRECT=1 make -j$(nproc)
+
     - name: Move binaries
       run: |
-        mv build/WickedShooter/WickedShooter ./WickedShooter_Linux
+        mv build/WickedShooter ./WickedShooter_Linux
 
     - name: Package WickedShooter
       uses: actions/upload-artifact@v4
