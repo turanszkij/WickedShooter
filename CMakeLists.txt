@@ -11,6 +11,8 @@ if (${INSTALLED_ENGINE})
     find_package(WickedEngine REQUIRED)
 endif()
 
+find_package(SDL2 REQUIRED)
+
 set(SOURCE_FILES
     main_linux.cpp
     stdafx.h
@@ -20,7 +22,13 @@ set(LIB_DXCOMPILER "libdxcompiler.so")
 
 add_executable(WickedShooter ${SOURCE_FILES})
 
-target_include_directories(WickedShooter PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/WickedEngine/WickedEngine)
+target_include_directories(WickedShooter PUBLIC 
+    ${CMAKE_CURRENT_SOURCE_DIR}/WickedEngine/WickedEngine
+    ${SDL2_INCLUDE_DIRS}
+)
 
-target_link_libraries(WickedShooter PUBLIC WickedEngine)
+target_link_libraries(WickedShooter PUBLIC 
+    WickedEngine
+    ${SDL2_LIBRARIES}
+)
 
