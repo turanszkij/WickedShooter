@@ -37,16 +37,6 @@ jobs:
       run: |
         move BUILD\x64\Release\WickedShooter\WickedShooter.exe .\WickedShooter_Windows.exe
 
-    - name: Install official UPX
-      shell: cmd
-      run: |
-        curl -sOSL https://github.com/upx/upx/releases/download/v%UPX_VERSION%/upx-%UPX_VERSION%-win64.zip
-        unzip -qj upx-%UPX_VERSION%-win64.zip upx-%UPX_VERSION%-win64/upx.exe
-
-    - name: Compress WickedShooter with UPX
-      shell: cmd
-      run: upx --best WickedShooter_Windows.exe
-
     - name: Package WickedShooter
       uses: actions/upload-artifact@v4
       with:
@@ -89,14 +79,6 @@ jobs:
     - name: Move binaries
       run: |
         mv build/WickedShooter/WickedShooter ./WickedShooter_Linux
-
-    - name: Install official UPX
-      run: |
-        curl -sOSL https://github.com/upx/upx/releases/download/v$UPX_VERSION/upx-$UPX_VERSION-amd64_linux.tar.xz
-        tar xf upx-$UPX_VERSION-amd64_linux.tar.xz upx-$UPX_VERSION-amd64_linux/upx
-
-    - name: Compress WickedShooter with UPX
-      run: upx-$UPX_VERSION-amd64_linux/upx --best WickedShooter_Linux
 
     - name: Package WickedShooter
       uses: actions/upload-artifact@v4
