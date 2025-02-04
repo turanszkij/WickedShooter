@@ -1,0 +1,101 @@
+name: Pull Request Verification
+
+on:
+  pull_request
+
+jobs:
+
+  windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Initial compile
+      shell: cmd
+      run: |
+        call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\Tools\VsDevCmd.bat"
+        MSBuild WickedShooter.sln /t:OfflineShaderCompiler /m /p:Configuration=Release /p:Platform=x64
+
+    - name: Generate shader dump
+      shell: cmd
+      run: |
+        cd "WickedEngine/WickedEngine"
+        "../../BUILD/x64/Release/OfflineShaderCompiler/OfflineShaderCompiler.exe" hlsl6 spirv shaderdump strip_reflection
+
+    - name: Recompile with shader dump
+      shell: cmd
+      run: |
+        call "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\Common7\Tools\VsDevCmd.bat"
+        MSBuild WickedShooter.sln /t:clean /m /p:Configuration=Release /p:Platform=x64
+        MSBuild WickedShooter.sln /t:WickedShooter /m /p:Configuration=Release /p:Platform=x64
+
+    - name: Move files
+      shell: cmd
+      run: |
+        move BUILD\x64\Release\WickedShooter\WickedShooter.exe .\WickedShooter_Windows.exe
+
+    - name: Install official UPX
+      shell: cmd
+      run: |
+        curl -sOSL https://github.com/upx/upx/releases/download/v%UPX_VERSION%/upx-%UPX_VERSION%-win64.zip
+        unzip -qj upx-%UPX_VERSION%-win64.zip upx-%UPX_VERSION%-win64/upx.exe
+
+    - name: Compress WickedShooter with UPX
+      shell: cmd
+      run: upx --best WickedShooter_Windows.exe
+
+    - name: Package WickedShooter
+      uses: actions/upload-artifact@v4
+      with:
+        name: WickedShooter (Windows)
+        path: |
+          WickedShooter.exe
+
+
+  linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install libsdl2-dev ccache
+
+    - name: Initial compile
+      run: |
+        cd WickedEngine
+        mkdir build
+        cd build
+        cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
+        CCACHE_NODIRECT=1 make -j$(nproc)
+
+    - name: Generate shader dump
+      run: |
+        cd WickedEngine/build/WickedEngine
+        ./offlineshadercompiler spirv rebuild shaderdump
+        mv wiShaderDump.h ../../WickedEngine/
+
+    - name: Recompile with shader dump
+      run: |
+        cd WickedEngine/build
+        CCACHE_NODIRECT=1 make -B -j $(nproc)
+
+    - name: Move binaries
+      run: |
+        mv build/WickedShooter/WickedShooter ./WickedShooter_Linux
+
+    - name: Install official UPX
+      run: |
+        curl -sOSL https://github.com/upx/upx/releases/download/v$UPX_VERSION/upx-$UPX_VERSION-amd64_linux.tar.xz
+        tar xf upx-$UPX_VERSION-amd64_linux.tar.xz upx-$UPX_VERSION-amd64_linux/upx
+
+    - name: Compress WickedShooter with UPX
+      run: upx-$UPX_VERSION-amd64_linux/upx --best WickedShooter_Linux
+
+    - name: Package WickedShooter
+      uses: actions/upload-artifact@v4
+      with:
+        name: WickedShooter (Linux)
+        path: |
+          WickedShooter_Linux
