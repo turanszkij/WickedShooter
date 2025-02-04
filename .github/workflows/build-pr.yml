@@ -49,7 +49,7 @@ jobs:
       with:
         name: WickedShooter (Windows)
         path: |
-          WickedShooter.exe
+          WickedShooter_Windows.exe
 
 
   linux:
