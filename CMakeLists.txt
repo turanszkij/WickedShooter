@@ -1,15 +1,7 @@
 cmake_minimum_required(VERSION 3.8)
 project(WickedShooter)
 
-# if the engine is installed system-wise,
-# you can set INSTALLED_ENGINE to ON
-# moving your project folder wherever you want
-set(INSTALLED_ENGINE OFF)
-# you may also want to remove the copy mechanism of the startup.lua file
-
-if (${INSTALLED_ENGINE})
-    find_package(WickedEngine REQUIRED)
-endif()
+add_subdirectory(WickedEngine)
 
 set(SOURCE_FILES
     main_linux.cpp
