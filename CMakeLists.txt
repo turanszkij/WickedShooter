@@ -22,11 +22,5 @@ add_executable(WickedShooter ${SOURCE_FILES})
 
 target_include_directories(WickedShooter PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/WickedEngine/WickedEngine)
 
-target_link_libraries(WickedShooter PUBLIC
-    # These are cmake generator expressions. They seem more daunting than they are
-    # Basically if the variable is ON it will give WickedEngine,
-    # if it's off, it will give WickedEngine::WickedEngine
-    $<$<NOT:$<BOOL:${INSTALLED_ENGINE}>>:WickedEngine>
-    $<$<BOOL:${INSTALLED_ENGINE}>:WickedEngine::WickedEngine>
-)
+target_link_libraries(WickedShooter PUBLIC WickedEngine)
 
