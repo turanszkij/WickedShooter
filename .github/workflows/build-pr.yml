@@ -3,6 +3,9 @@ name: Pull Request Verification
 on:
   pull_request
 
+env:
+  UPX_VERSION: 4.2.4
+
 jobs:
 
   windows:
