@@ -1,9 +1,9 @@
-#include "stdafx.h"
+#include "WickedEngine.h"
+#include "config.h"
+
 #include <SDL2/SDL.h>
 
 wi::Application application;
-
-bool is_startup = wi::helper::FileExists("startup.lua");
 
 int sdl_loop()
 {
@@ -15,9 +15,10 @@ int sdl_loop()
         SDL_PumpEvents();
         application.Run();
 
+        static bool is_startup = false;
         if (!is_startup && wi::initializer::IsInitializeFinished())
         {
-            wi::lua::RunFile(wi::helper::GetCurrentPath() + "/first_person.lua");
+            wi::lua::RunFile(wi::helper::GetCurrentPath() + "/" + std::string(config::main_script_file));
             is_startup = true;
         }
 
@@ -63,7 +64,7 @@ int main(int argc, char *argv[])
 
     application.SetWindow(window.get());
 
-    wi::backlog::setFontColor(wi::Color(130, 250, 180, 255));
+    wi::backlog::setFontColor(config::backlog_color);
 
     int ret = sdl_loop();
 

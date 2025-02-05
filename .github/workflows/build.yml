@@ -1,7 +1,8 @@
-name: Pull Request Verification
+name: Build
 
 on:
-  pull_request
+  push:
+    branches: [ master ]
 
 env:
   UPX_VERSION: 4.2.4

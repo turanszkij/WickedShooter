@@ -1,7 +1,8 @@
-name: Pull Request Verification
+name: Nightly Build
 
 on:
-  pull_request
+  schedule:
+    - cron:  '0 0 * * *'
 
 env:
   UPX_VERSION: 4.2.4

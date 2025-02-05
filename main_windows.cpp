@@ -1,10 +1,6 @@
-// TemplateWindows.cpp : Defines the entry point for the application.
-//
-
-#include "stdafx.h"
-#include "main.h"
-
-#define MAX_LOADSTRING 100
+#include "WickedEngine.h"
+#include "resource.h"
+#include "config.h"
 
 // Global Variables:
 HINSTANCE hInst;                                // current instance
@@ -42,9 +38,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     HACCEL hAccelTable = LoadAccelerators(hInstance, nullptr);
 
-    wi::backlog::setFontColor(wi::Color(130, 250, 180, 255));
-
-    bool is_startup = wi::helper::FileExists("startup.lua");
+    wi::backlog::setFontColor(config::backlog_color);
 
 	MSG msg = { 0 };
 	while (msg.message != WM_QUIT)
@@ -55,11 +49,12 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 		}
 		else {
 
-			application.Run(); // run the update - render loop (mandatory)
+			application.Run();
 
+            static bool is_startup = false;
             if (!is_startup && wi::initializer::IsInitializeFinished())
             {
-                wi::lua::RunFile(wi::helper::GetCurrentPath() + "/first_person.lua");
+                wi::lua::RunFile(wi::helper::GetCurrentPath() + "/" + std::string(config::main_script_file));
                 is_startup = true;
             }
 		}
@@ -67,7 +62,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     wi::jobsystem::ShutDown();
 
-    return (int) msg.wParam;
+    return (int)msg.wParam;
 }
 
 
