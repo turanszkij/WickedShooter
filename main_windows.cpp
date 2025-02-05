@@ -44,8 +44,6 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
     wi::backlog::setFontColor(wi::Color(130, 250, 180, 255));
 
-    bool is_startup = wi::helper::FileExists("startup.lua");
-
 	MSG msg = { 0 };
 	while (msg.message != WM_QUIT)
 	{
@@ -57,6 +55,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
 
 			application.Run(); // run the update - render loop (mandatory)
 
+            static bool is_startup = false;
             if (!is_startup && wi::initializer::IsInitializeFinished())
             {
                 wi::lua::RunFile(wi::helper::GetCurrentPath() + "/first_person.lua");
