@@ -113,6 +113,9 @@
     <ResourceCompile Include="TemplateWindows.rc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".github\workflows\build-nightly.yml" />
+    <None Include=".github\workflows\build-pr.yml" />
+    <None Include=".github\workflows\build.yml" />
     <None Include="dxcompiler.dll">
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
       <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</DeploymentContent>
