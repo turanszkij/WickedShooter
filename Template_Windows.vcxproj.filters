@@ -16,6 +16,9 @@
     <ClInclude Include="targetver.h">
       <Filter>Code</Filter>
     </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>Code</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main_windows.cpp">
