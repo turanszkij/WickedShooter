@@ -5,13 +5,7 @@ add_subdirectory(WickedEngine)
 
 set(SOURCE_FILES
     main_linux.cpp
-    stdafx.h
 )
-
-set(PLATFORM "SDL2")
-add_compile_definitions(SDL2=1)
-
-set(LIB_DXCOMPILER "libdxcompiler.so")
 
 add_executable(WickedShooter ${SOURCE_FILES})
 

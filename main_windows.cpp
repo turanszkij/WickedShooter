@@ -1,8 +1,5 @@
-// TemplateWindows.cpp : Defines the entry point for the application.
-//
-
-#include "stdafx.h"
-#include "main.h"
+#include "WickedEngine.h"
+#include "resource.h"
 
 #define MAX_LOADSTRING 100
 

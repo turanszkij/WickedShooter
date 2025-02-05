@@ -1,4 +1,5 @@
-#include "stdafx.h"
+#include "WickedEngine.h"
+
 #include <SDL2/SDL.h>
 
 wi::Application application;
