@@ -85,11 +85,6 @@ jobs:
         ./offlineshadercompiler spirv rebuild shaderdump
         mv wiShaderDump.h ../../WickedEngine/
 
-    - name: Recompile with shader dump
-      run: |
-        cd WickedEngine/build
-        CCACHE_NODIRECT=1 make -B -j $(nproc)
-
     - name: Compile WickedShooter
       run: |
         mkdir build

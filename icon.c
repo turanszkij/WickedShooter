@@ -1,10 +1,10 @@
 /* GIMP RGBA C-Source image dump (icon.c) */
 
 static const struct {
-  guint  	 width;
-  guint  	 height;
-  guint  	 bytes_per_pixel; /* 2:RGB16, 3:RGB, 4:RGBA */ 
-  guint8 	 pixel_data[128 * 128 * 4 + 1];
+  unsigned int  	 width;
+  unsigned int  	 height;
+  unsigned int  	 bytes_per_pixel; /* 2:RGB16, 3:RGB, 4:RGBA */ 
+  unsigned char 	 pixel_data[128 * 128 * 4 + 1];
 } gimp_image = {
   128, 128, 4,
   "\235\267\317\000\234\266\317\000\234\266\317\000\234\266\317\000\234\266\317\000\234"
