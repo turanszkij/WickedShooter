@@ -79,10 +79,10 @@ int main(int argc, char *argv[])
                     application.SetWindow(application.window);
                     break;
                 case SDL_WINDOWEVENT_FOCUS_LOST:
-                    editor.is_window_active = false;
+                    application.is_window_active = false;
                     break;
                 case SDL_WINDOWEVENT_FOCUS_GAINED:
-                    editor.is_window_active = true;
+                    application.is_window_active = true;
                     break;
                 default:
                     break;
