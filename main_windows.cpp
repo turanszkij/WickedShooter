@@ -140,6 +140,21 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
     switch (message)
     {
     case WM_SETCURSOR:
+        switch (LOWORD(lParam))
+        {
+        case HTBOTTOM:
+        case HTBOTTOMLEFT:
+        case HTBOTTOMRIGHT:
+        case HTLEFT:
+        case HTRIGHT:
+        case HTTOP:
+        case HTTOPLEFT:
+        case HTTOPRIGHT:
+            return DefWindowProc(hWnd, message, wParam, lParam);
+        default:
+            wi::input::NotifyCursorChanged();
+            break;
+        }
         break;
     case WM_COMMAND:
         {
