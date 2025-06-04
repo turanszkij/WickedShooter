@@ -10,6 +10,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WickedEngine_Windows", "WickedEngine\WickedEngine\WickedEngine_Windows.vcxproj", "{06163DCB-B183-4ED9-9C62-13EF1658E049}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OfflineShaderCompiler", "WickedEngine\WickedEngine\OfflineShaderCompiler.vcxproj", "{3B74A7FE-CED7-4723-8824-AC708A865B98}"
+	ProjectSection(ProjectDependencies) = postProject
+		{06163DCB-B183-4ED9-9C62-13EF1658E049} = {06163DCB-B183-4ED9-9C62-13EF1658E049}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
