@@ -89,3 +89,35 @@ jobs:
         name: WickedShooter (Linux)
         path: |
           WickedShooter_Linux
+
+  macos:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Compile Offlineshadercompiler
+      run: |
+        xcodebuild clean build -project WickedEngine/WickedEngine/offlineshadercompiler.xcodeproj -scheme offlineshadercompiler -configuration Release
+
+    - name: Generate shader dump
+      run: |
+        BUILD_PATH="$(xcodebuild -project WickedEngine/WickedEngine/offlineshadercompiler.xcodeproj -scheme offlineshadercompiler -configuration Release -showBuildSettings | grep -m 1 "BUILT_PRODUCTS_DIR" | awk -F' = ' '{print $2}')"
+        cd WickedEngine/WickedEngine
+        "${BUILD_PATH}/offlineshadercompiler" metal rebuild shaderdump
+        cd ../..
+
+    - name: Build Editor
+      run: |
+        xcodebuild clean build -project WickedShooter.xcodeproj -scheme WickedShooter -configuration Release
+
+    - name: Move files
+      run: |
+        BUILD_PATH="$(xcodebuild -project WickedShooter.xcodeproj -scheme WickedShooter -configuration Release -showBuildSettings | grep -m 1 "BUILT_PRODUCTS_DIR" | awk -F' = ' '{print $2}')"
+        mv "${BUILD_PATH}/WickedShooter" ./WickedShooter_MacOS
+
+    - name: Package WickedShooter
+      uses: actions/upload-artifact@v4
+      with:
+        name: WickedShooter (Mac OS)
+        path: |
+          WickedShooter_MacOS
