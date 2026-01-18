@@ -223,6 +223,9 @@ wiShaderdump.h
 *.elf
 *.prx
 
+# MAC:
+xcuserdata/
+
 # Others
 log.txt
 pso_cache_vulkan
