@@ -96,11 +96,16 @@ int main( int argc, char* argv[] )
                 static bool is_startup = false;
                 if (!is_startup && wi::initializer::IsInitializeFinished())
                 {
+                    // Fuckery with lack of consistent pathing on macos:
+                    std::string scriptfile = std::string(config::main_script_file);
                     std::string path = wi::helper::GetExecutablePath();
-                    size_t found;
-                    found = path.find_last_of("/\\");
-                    path = path.substr(0, found + 1);
-                    wi::lua::RunFile(path + std::string(config::main_script_file));
+                    size_t found = 0;
+                    while (!wi::helper::FileExists(path + scriptfile) && found != std::string::npos)
+                    {
+                        found = path.find_last_of("/\\");
+                        path = path.substr(0, found + 1);
+                    }
+                    wi::lua::RunFile(path + scriptfile);
                     is_startup = true;
                 }
                 
