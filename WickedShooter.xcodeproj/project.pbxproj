@@ -76,6 +76,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1EC085CA2F1D15B9005D29BA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -124,6 +131,12 @@
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1EC085B22F1D0A55005D29BA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 1EC085CA2F1D15B9005D29BA /* Products */;
+					ProjectRef = 1EC085C22F1D0B66005D29BA /* WickedEngine.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1EC085B02F1D0A55005D29BA /* WickedShooter */,

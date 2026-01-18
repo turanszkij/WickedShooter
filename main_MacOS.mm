@@ -96,7 +96,8 @@ int main( int argc, char* argv[] )
                 static bool is_startup = false;
                 if (!is_startup && wi::initializer::IsInitializeFinished())
                 {
-                    wi::lua::RunFile(wi::helper::GetCurrentPath() + "/" + std::string(config::main_script_file));
+                    // Note: GetExecutablePath is used here instead
+                    wi::lua::RunFile(wi::helper::GetExecutablePath() + "/" + std::string(config::main_script_file));
                     is_startup = true;
                 }
                 
