@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E19DD0B2F337F9C009F2E30 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E19DD072F337F9C009F2E30 /* GameController.framework */; };
 		1EC085BC2F1D0A8D005D29BA /* main_MacOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1EC085BB2F1D0A8D005D29BA /* main_MacOS.mm */; };
 		1EC085BF2F1D0B4E005D29BA /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC085BE2F1D0B4E005D29BA /* Metal.framework */; };
 		1EC085C12F1D0B53005D29BA /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC085C02F1D0B53005D29BA /* AppKit.framework */; };
@@ -26,6 +27,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1E19DD072F337F9C009F2E30 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
 		1EC085B12F1D0A55005D29BA /* WickedShooter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WickedShooter; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC085BB2F1D0A8D005D29BA /* main_MacOS.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main_MacOS.mm; sourceTree = "<group>"; };
 		1EC085BE2F1D0B4E005D29BA /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
@@ -41,6 +43,7 @@
 			files = (
 				1EC085C92F1D0B73005D29BA /* libWickedEngine.a in Frameworks */,
 				1EC085BF2F1D0B4E005D29BA /* Metal.framework in Frameworks */,
+				1E19DD0B2F337F9C009F2E30 /* GameController.framework in Frameworks */,
 				1EC085C12F1D0B53005D29BA /* AppKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +72,7 @@
 		1EC085BD2F1D0B4E005D29BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E19DD072F337F9C009F2E30 /* GameController.framework */,
 				1EC085C82F1D0B73005D29BA /* libWickedEngine.a */,
 				1EC085C02F1D0B53005D29BA /* AppKit.framework */,
 				1EC085BE2F1D0B4E005D29BA /* Metal.framework */,
