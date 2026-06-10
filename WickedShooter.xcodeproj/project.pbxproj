@@ -8,11 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		1E19DD0B2F337F9C009F2E30 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E19DD072F337F9C009F2E30 /* GameController.framework */; };
+		1E3608C12FD60AD00042E04D /* libWickedEngine_MacOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3608BE2FD60AD00042E04D /* libWickedEngine_MacOS.a */; };
+		1E3608C22FD60BB90042E04D /* libWickedEngine_iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3608C02FD60AD00042E04D /* libWickedEngine_iOS.a */; };
+		1E3608C42FD60BCB0042E04D /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3608C32FD60BCB0042E04D /* Metal.framework */; };
+		1E3608C62FD60BD00042E04D /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3608C52FD60BD00042E04D /* GameController.framework */; };
+		1E3608C82FD60BDB0042E04D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3608C72FD60BDB0042E04D /* UIKit.framework */; };
+		1E3608CA2FD60BE40042E04D /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3608C92FD60BE40042E04D /* CoreAudio.framework */; };
+		1E3608CC2FD60C380042E04D /* main_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1E3608CB2FD60C380042E04D /* main_iOS.mm */; };
+		1E3608CE2FD60CAD0042E04D /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3608CD2FD60CAD0042E04D /* CoreAudioKit.framework */; };
+		1E3608D02FD60CC50042E04D /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3608CF2FD60CC50042E04D /* AVFoundation.framework */; };
+		1E3608D22FD60CD60042E04D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3608D12FD60CD60042E04D /* AudioToolbox.framework */; };
+		1E3608D42FD60CE20042E04D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E3608D32FD60CE20042E04D /* QuartzCore.framework */; };
+		1E3608D62FD60D4D0042E04D /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 1E3608D52FD60D4D0042E04D /* AppIcon.icon */; };
 		1EC085BC2F1D0A8D005D29BA /* main_MacOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1EC085BB2F1D0A8D005D29BA /* main_MacOS.mm */; };
 		1EC085BF2F1D0B4E005D29BA /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC085BE2F1D0B4E005D29BA /* Metal.framework */; };
 		1EC085C12F1D0B53005D29BA /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC085C02F1D0B53005D29BA /* AppKit.framework */; };
-		1EC085C92F1D0B73005D29BA /* libWickedEngine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EC085C82F1D0B73005D29BA /* libWickedEngine.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E3608BD2FD60AD00042E04D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EC085C22F1D0B66005D29BA /* WickedEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1EDA7BB12EE1E60500210D41;
+			remoteInfo = WickedEngine_MacOS;
+		};
+		1E3608BF2FD60AD00042E04D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1EC085C22F1D0B66005D29BA /* WickedEngine.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1E50AEB32FCEFF2E000EE545;
+			remoteInfo = WickedEngine_iOS;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		1EC085AF2F1D0A55005D29BA /* CopyFiles */ = {
@@ -28,6 +56,17 @@
 
 /* Begin PBXFileReference section */
 		1E19DD072F337F9C009F2E30 /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = System/Library/Frameworks/GameController.framework; sourceTree = SDKROOT; };
+		1E36086F2FD605D80042E04D /* WickedShooter_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WickedShooter_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E3608C32FD60BCB0042E04D /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk/System/Library/Frameworks/Metal.framework; sourceTree = DEVELOPER_DIR; };
+		1E3608C52FD60BD00042E04D /* GameController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameController.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk/System/Library/Frameworks/GameController.framework; sourceTree = DEVELOPER_DIR; };
+		1E3608C72FD60BDB0042E04D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		1E3608C92FD60BE40042E04D /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk/System/Library/Frameworks/CoreAudio.framework; sourceTree = DEVELOPER_DIR; };
+		1E3608CB2FD60C380042E04D /* main_iOS.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main_iOS.mm; sourceTree = "<group>"; };
+		1E3608CD2FD60CAD0042E04D /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk/System/Library/Frameworks/CoreAudioKit.framework; sourceTree = DEVELOPER_DIR; };
+		1E3608CF2FD60CC50042E04D /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
+		1E3608D12FD60CD60042E04D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk/System/Library/Frameworks/AudioToolbox.framework; sourceTree = DEVELOPER_DIR; };
+		1E3608D32FD60CE20042E04D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS26.2.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		1E3608D52FD60D4D0042E04D /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		1EC085B12F1D0A55005D29BA /* WickedShooter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = WickedShooter; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC085BB2F1D0A8D005D29BA /* main_MacOS.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main_MacOS.mm; sourceTree = "<group>"; };
 		1EC085BE2F1D0B4E005D29BA /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
@@ -36,15 +75,39 @@
 		1EC085C82F1D0B73005D29BA /* libWickedEngine.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libWickedEngine.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1E3608702FD605D80042E04D /* WickedShooter_iOS */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = WickedShooter_iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		1E36086C2FD605D80042E04D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E3608C42FD60BCB0042E04D /* Metal.framework in Frameworks */,
+				1E3608CE2FD60CAD0042E04D /* CoreAudioKit.framework in Frameworks */,
+				1E3608C82FD60BDB0042E04D /* UIKit.framework in Frameworks */,
+				1E3608D22FD60CD60042E04D /* AudioToolbox.framework in Frameworks */,
+				1E3608C22FD60BB90042E04D /* libWickedEngine_iOS.a in Frameworks */,
+				1E3608CA2FD60BE40042E04D /* CoreAudio.framework in Frameworks */,
+				1E3608D02FD60CC50042E04D /* AVFoundation.framework in Frameworks */,
+				1E3608C62FD60BD00042E04D /* GameController.framework in Frameworks */,
+				1E3608D42FD60CE20042E04D /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1EC085AE2F1D0A55005D29BA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1EC085C92F1D0B73005D29BA /* libWickedEngine.a in Frameworks */,
 				1EC085BF2F1D0B4E005D29BA /* Metal.framework in Frameworks */,
 				1E19DD0B2F337F9C009F2E30 /* GameController.framework in Frameworks */,
 				1EC085C12F1D0B53005D29BA /* AppKit.framework in Frameworks */,
+				1E3608C12FD60AD00042E04D /* libWickedEngine_MacOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,7 +118,10 @@
 			isa = PBXGroup;
 			children = (
 				1EC085BB2F1D0A8D005D29BA /* main_MacOS.mm */,
+				1E3608CB2FD60C380042E04D /* main_iOS.mm */,
+				1E3608D52FD60D4D0042E04D /* AppIcon.icon */,
 				1EC085C22F1D0B66005D29BA /* WickedEngine.xcodeproj */,
+				1E3608702FD605D80042E04D /* WickedShooter_iOS */,
 				1EC085BD2F1D0B4E005D29BA /* Frameworks */,
 				1EC085B22F1D0A55005D29BA /* Products */,
 			);
@@ -65,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				1EC085B12F1D0A55005D29BA /* WickedShooter */,
+				1E36086F2FD605D80042E04D /* WickedShooter_iOS.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +139,14 @@
 		1EC085BD2F1D0B4E005D29BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1E3608D32FD60CE20042E04D /* QuartzCore.framework */,
+				1E3608D12FD60CD60042E04D /* AudioToolbox.framework */,
+				1E3608CF2FD60CC50042E04D /* AVFoundation.framework */,
+				1E3608CD2FD60CAD0042E04D /* CoreAudioKit.framework */,
+				1E3608C92FD60BE40042E04D /* CoreAudio.framework */,
+				1E3608C72FD60BDB0042E04D /* UIKit.framework */,
+				1E3608C52FD60BD00042E04D /* GameController.framework */,
+				1E3608C32FD60BCB0042E04D /* Metal.framework */,
 				1E19DD072F337F9C009F2E30 /* GameController.framework */,
 				1EC085C82F1D0B73005D29BA /* libWickedEngine.a */,
 				1EC085C02F1D0B53005D29BA /* AppKit.framework */,
@@ -83,6 +158,8 @@
 		1EC085CA2F1D15B9005D29BA /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				1E3608BE2FD60AD00042E04D /* libWickedEngine_MacOS.a */,
+				1E3608C02FD60AD00042E04D /* libWickedEngine_iOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +167,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1E36086E2FD605D80042E04D /* WickedShooter_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E3608882FD605D90042E04D /* Build configuration list for PBXNativeTarget "WickedShooter_iOS" */;
+			buildPhases = (
+				1E36086B2FD605D80042E04D /* Sources */,
+				1E36086C2FD605D80042E04D /* Frameworks */,
+				1E36086D2FD605D80042E04D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				1E3608702FD605D80042E04D /* WickedShooter_iOS */,
+			);
+			name = WickedShooter_iOS;
+			packageProductDependencies = (
+			);
+			productName = WickedShooter_iOS;
+			productReference = 1E36086F2FD605D80042E04D /* WickedShooter_iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
 		1EC085B02F1D0A55005D29BA /* WickedShooter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1EC085B82F1D0A55005D29BA /* Build configuration list for PBXNativeTarget "WickedShooter" */;
@@ -118,6 +217,9 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
+					1E36086E2FD605D80042E04D = {
+						CreatedOnToolsVersion = 26.2;
+					};
 					1EC085B02F1D0A55005D29BA = {
 						CreatedOnToolsVersion = 26.2;
 					};
@@ -144,11 +246,48 @@
 			projectRoot = "";
 			targets = (
 				1EC085B02F1D0A55005D29BA /* WickedShooter */,
+				1E36086E2FD605D80042E04D /* WickedShooter_iOS */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		1E3608BE2FD60AD00042E04D /* libWickedEngine_MacOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libWickedEngine_MacOS.a;
+			remoteRef = 1E3608BD2FD60AD00042E04D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1E3608C02FD60AD00042E04D /* libWickedEngine_iOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libWickedEngine_iOS.a;
+			remoteRef = 1E3608BF2FD60AD00042E04D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E36086D2FD605D80042E04D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E3608D62FD60D4D0042E04D /* AppIcon.icon in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		1E36086B2FD605D80042E04D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E3608CC2FD60C380042E04D /* main_iOS.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1EC085AD2F1D0A55005D29BA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -160,6 +299,69 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		1E3608852FD605D90042E04D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WickedShooter_iOS/WickedShooter_iOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92HRSW64GQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "turanszkij.WickedShooter-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1E3608862FD605D90042E04D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WickedShooter_iOS/WickedShooter_iOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 92HRSW64GQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "turanszkij.WickedShooter-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		1EC085B62F1D0A55005D29BA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -296,6 +498,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1E3608882FD605D90042E04D /* Build configuration list for PBXNativeTarget "WickedShooter_iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E3608852FD605D90042E04D /* Debug */,
+				1E3608862FD605D90042E04D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1EC085AC2F1D0A55005D29BA /* Build configuration list for PBXProject "WickedShooter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
